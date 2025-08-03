@@ -1,6 +1,8 @@
 "use client"
 import React from 'react';
 import { ChevronLeft, Search, Heart, Eye, Home, DoorOpen, Bookmark, Utensils, Star, User } from 'lucide-react';
+// Update the import path below to the actual location of BottomNav, for example:
+import BottomNav from '@components/ui'
 
 // Define an interface for the content card data structure
 interface ContentCard {
@@ -112,20 +114,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Bottom Navigation */}
-        <div className="btm-nav bg-white border-t border-gray-100 rounded-b-3xl">
-          <button className="active text-purple-600">
-            <Home size={24} />
-            <span className="btm-nav-label">Home</span>
-          </button>
-          <button className="text-gray-500">
-            <Utensils size={24} />
-            <span className="btm-nav-label">Food</span>
-          </button>
-          <button className="text-gray-500">
-            <DoorOpen size={24} />
-            <span className="btm-nav-label">Shelter</span>
-          </button>
-        </div>
+        <BottomNav/>
       </div>
     </div>
   );
