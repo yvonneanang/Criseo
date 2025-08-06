@@ -254,7 +254,7 @@ Respond with JSON in this exact format:
                       }
                     }
                   },
-                  required: ["type", "reason", "priority"]
+                  required: ["type", "reason", "priority"],
                 }
               },
               urgencyLevel: { type: "string" },
@@ -346,7 +346,7 @@ Respond with JSON in this exact format:
                           quantity: { type: "number" },
                           unit: { type: "string" }
                         },
-                        required: ["item", "quantity", "unit"]
+                        required: ["item", "quantity", "unit"],
                       }
                     },
                     instructions: {
@@ -358,15 +358,15 @@ Respond with JSON in this exact format:
                       properties: {
                         calories: { type: "number" },
                         protein: { type: "string" },
-                        carbs: { type: "string" }
+                        carbs: { type: "string" },
                       }
                     }
                   },
-                  required: ["name", "servings", "ingredients", "instructions"]
+                  required: ["name", "servings", "ingredients", "instructions"],
                 }
               }
             },
-            required: ["recipes"]
+            required: ["recipes"],
           },
           system: "You are a nutritionist and crisis response expert specializing in food preparation during humanitarian emergencies.",
           stream: false,
@@ -376,7 +376,7 @@ Respond with JSON in this exact format:
       const rawJson = response.response;
       if (rawJson) {
         const result = JSON.parse(rawJson);
-        return result.recipes || [];
+        return result;
       } else {
         throw new Error("Empty response from model");
       }
@@ -469,15 +469,15 @@ Respond with JSON in this exact format:
                                     unit: { type: "string" },
                                     totalQuantity: { type: "number" }
                                     },
-                                    required: ["item", "quantityPerPerson", "unit", "totalQuantity"]
+                                    required: ["item", "quantityPerPerson", "unit", "totalQuantity"],
                                 }
                                 }
                             },
-                            required: ["meal", "items"]
+                            required: ["meal", "items"],
                             }
                         }
                         },
-                        required: ["day", "meals"]
+                        required: ["day", "meals"],
                     }},
                 recommendations:{
                     type: "array",
@@ -493,7 +493,7 @@ Respond with JSON in this exact format:
                         available: { type: "number" },
                         unit: { type: "string" }
                         },
-                        required: ["item", "needed", "available", "unit"]
+                        required: ["item", "needed", "available", "unit"],
                     }
                 }
             },

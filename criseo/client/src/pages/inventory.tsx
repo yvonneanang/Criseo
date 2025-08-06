@@ -86,10 +86,12 @@ export default function InventoryPage() {
         peopleCount: parseInt(peopleCount)
       });
       const data = await response.json();
-      setRecipes(data.recipes || []);
+      setRecipes(data.recipes);
+      // setRecipes(data.recipes || []); 
       toast({
         title: "Recipes generated",
-        description: `Generated ${data.recipes?.length || 0} recipes for ${peopleCount} people.`
+        // ${data.recipes?.length || 0}
+        description: `Generated ${data.recipes?.length} recipes for ${peopleCount} people.`
       });
     } catch (error) {
       console.error("Error generating recipes:", error);
