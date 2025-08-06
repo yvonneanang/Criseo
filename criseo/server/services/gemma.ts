@@ -1,8 +1,4 @@
-//import { GoogleGenerativeAI } from "@google/generative-ai";
 import ollama from "ollama";
-
-// Using Google Gemini AI for crisis assistance
-//const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
 interface ResourceRecommendation {
   recommendations: Array<{
